@@ -2,12 +2,12 @@
 # Найти наибольшее число из двух
 
 #  Функция читает данные от пользователя, и преобразует их в int
-def ReadData(str):
+def read_data(str):
     return int(input(str))
 
 # Функция находит наибольшее число из двух
 
-def MaxNum(num1,num2):
+def max_num(num1,num2):
     maxNum = 0
     if num1 > num2:
         maxNum = num1
@@ -21,9 +21,9 @@ def MaxNum(num1,num2):
 
 # Основной код программы
 # Вводим данные с консоли
-firstNum = ReadData("Введите число А: ")
-secondNum = ReadData("Введите число Б: ")
+firstNum = read_data("Введите число А: ")
+secondNum = read_data("Введите число Б: ")
 
 # Вычисляем макс введенное число
-MaxNum(firstNum,secondNum)
+max_num(firstNum,secondNum)
 
