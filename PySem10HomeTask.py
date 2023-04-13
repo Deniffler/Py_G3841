@@ -12,9 +12,11 @@ random.shuffle(lst)
 data = pd.DataFrame({'whoAmI':lst})
 print(data)
 
-print(pd.get_dummies(data))
+#==================================================#
+data['tmp'] = 1
+data.set_index([data.index, 'whoAmI'], inplace=True)
+data = data.unstack(level=-1, fill_value = 0).astype(int)
+data.columns = data.columns.droplevel()
+data.columns.name = None
+print(data)
 
-# Ответ на вопрос: one hot кодировка напоминает обычную бинарную систему.
-# Можно ли обойтись без pd.get_dummies: в данном случае всего 2 слова,
-# было бы достаточно, получить их значения hot кодировки(фиктивную переменную),
-# не более, все остальные одинаковые слова, принимают те же значения
